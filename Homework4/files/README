@@ -1,0 +1,3 @@
+My format is tabbing and the new line character starts a new entry.
+
+The add function, remove function, and list function work but the set and sort functions do not.
