@@ -1,0 +1,14 @@
+CC=g++
+CFLAGS=-Wall
+SOURCES= driver.cpp exprtest.cpp
+EXECUTABLE= exprtest
+
+all: $(EXECUTABLE)
+
+exprtest: 
+	bison parser.ypp
+	flex -t scanner.ll > scanner.cpp
+	${CC} ${CFLAGS} ${EXECUTABLE} ${SOURCES} -g -o parser.tab.cpp scanner.cpp 
+
+clean: 
+	rm *hh *tab* scanner.cpp exprtest
